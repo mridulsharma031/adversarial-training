@@ -1,6 +1,6 @@
-# Adversarial Lab — Industry-Grade Adversarial ML on CIFAR-10
+# Adversarial Lab —  Adversarial ML on CIFAR-10
 
-A production-quality adversarial machine learning framework with FGSM, PGD,
+An adversarial machine learning framework with FGSM, PGD,
 adversarial training, robustness evaluation, and visualisation.
 
 ## Quick Start (Windows PowerShell / macOS/Linux bash)
