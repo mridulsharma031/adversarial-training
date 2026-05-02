@@ -1,0 +1,31 @@
+experiment:
+  name: fast_debug
+  seed: 0
+  output_dir: outputs/fast_debug
+data:
+  root: ./data
+  image_size: 32
+  batch_size: 32
+  num_workers: 0
+  use_fake_data: true
+model:
+  arch: resnet18
+  num_classes: 10
+  pretrained: false
+training:
+  epochs: 2
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 5.0e-4
+  scheduler: cosine
+  defense: clean
+  train_attack: pgd
+attack:
+  epsilon: 0.03137
+  alpha: 0.00784
+  steps: 3
+  random_start: true
+evaluation:
+  pgd_steps: 3
+  epsilons: [0.0, 0.03137]
+  num_vis_images: 4

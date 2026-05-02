@@ -1,0 +1,31 @@
+experiment:
+  name: cifar10_resnet18
+  seed: 42
+  output_dir: outputs/default
+data:
+  root: ./data
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  use_fake_data: false
+model:
+  arch: resnet18
+  num_classes: 10
+  pretrained: false
+training:
+  epochs: 30
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 5.0e-4
+  scheduler: cosine
+  defense: clean
+  train_attack: pgd
+attack:
+  epsilon: 0.03137
+  alpha: 0.00784
+  steps: 7
+  random_start: true
+evaluation:
+  pgd_steps: 20
+  epsilons: [0.0, 0.00392, 0.00784, 0.01569, 0.03137]
+  num_vis_images: 8
